@@ -1,20 +1,12 @@
 function insert_Row() {
 	const table = document.getElementById("sampleTable");
 
-	const newRow = document.createElement("tr");
+	// Insert row at index 0 (TOP)
+	const newRow = table.insertRow(0);
 
-	const cell1 = document.createElement("td");
-	const cell2 = document.createElement("td");
+	const cell1 = newRow.insertCell(0);
+	const cell2 = newRow.insertCell(1);
 
 	cell1.textContent = "New Cell1";
 	cell2.textContent = "New Cell2";
-
-	newRow.appendChild(cell1);
-	newRow.appendChild(cell2);
-
-	if (table.firstElementChild) {
-		table.insertBefore(newRow, table.firstElementChild);
-	} else {
-		table.appendChild(newRow);
-	}
 }
