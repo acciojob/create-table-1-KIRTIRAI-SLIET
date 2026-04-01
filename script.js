@@ -12,6 +12,9 @@ function insert_Row() {
 	newRow.appendChild(cell1);
 	newRow.appendChild(cell2);
 
-	const firstRow = table.rows[1];
-	table.insertBefore(newRow, firstRow);
+	if (table.firstElementChild) {
+		table.insertBefore(newRow, table.firstElementChild);
+	} else {
+		table.appendChild(newRow);
+	}
 }
